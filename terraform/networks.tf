@@ -5,13 +5,13 @@ module "app_vpc" {
   name = "app_vpc"
   cidr = var.vpc_cidr
 
-  azs             = var.zones
-  private_subnets = var.private_subnets
-  public_subnets  = var.public_subnets
+  azs              = var.zones
+  private_subnets  = var.private_subnets
+  public_subnets   = var.public_subnets
   database_subnets = var.db_subnet
 
-  private_subnet_suffix = "pvt"
-  public_subnet_suffix  = "pub"
+  private_subnet_suffix  = "pvt"
+  public_subnet_suffix   = "pub"
   database_subnet_suffix = "db"
   public_subnet_tags = {
     "Name" = "public_subnet_web"
@@ -20,7 +20,7 @@ module "app_vpc" {
     "Name" = "private_subnet_app"
   }
 
-  database_subnet_group_name = "db-subnet-group"
+  database_subnet_group_name   = "db-subnet-group"
   create_database_subnet_group = true
 
   enable_dns_hostnames = true
@@ -28,7 +28,7 @@ module "app_vpc" {
   enable_nat_gateway   = true
 
   tags = {
-    env     = "dev"
+    env       = "dev"
     Terraform = "true"
   }
 }

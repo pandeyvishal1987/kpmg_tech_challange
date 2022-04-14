@@ -1,7 +1,7 @@
-# Creating Security Group 
+# Creating Security Group
 resource "aws_security_group" "web_sg" {
   vpc_id = module.app_vpc.vpc_id
-  
+
   # Inbound Rules
   # HTTP access from anywhere
   ingress {
@@ -10,8 +10,8 @@ resource "aws_security_group" "web_sg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-  
-  
+
+
   # Outbound Rules
   # Internet access to anywhere
   egress {

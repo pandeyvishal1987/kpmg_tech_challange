@@ -30,8 +30,8 @@ resource "aws_instance" "app_server" {
 # Creating RDS Instance
 
 resource "random_password" "db_password" {
-  length = 16
-  special = true
+  length           = 16
+  special          = true
   override_special = "_%@/'\""
 }
 
